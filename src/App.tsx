@@ -10,6 +10,7 @@ const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/Gliwice" replace /> },
   { path: "/Gliwice", element: <CurrentWeatherView /> },
   { path: "/Hamburg", element: <CurrentWeatherView /> },
+  { path: "*", element: <Navigate to="/Gliwice" replace /> },
 ]);
 
 function App() {

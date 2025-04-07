@@ -11,7 +11,7 @@ import { getForecastedWeathersInCity } from "../repositories/forecastWeatherRepo
 export const CurrentWeatherView = () => {
   const [weather, setWeather] = useState<CurrentWeather>();
   const [forecast, setForecast] = useState<ForecastWeather>();
-  const [imperialUnits, setImperial] = useState<boolean>(true);
+  const [imperialUnits, setImperial] = useState<boolean>(false);
 
   const location = useLocation();
   const city = location.pathname.substring(1);
