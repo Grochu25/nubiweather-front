@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { CurrentWeather } from "../model/currentWeather";
 import { data } from "../model/mockData";
 import { WeatherComponent } from "../components/weatherComponent";
+import { Link } from "react-router-dom";
+import { LinkButton } from "../components/atoms/linkButton";
 
 export const CurrentWeatherView = () => {
   const [weathers, setWeathers] = useState<CurrentWeather[]>([]);
@@ -17,15 +19,31 @@ export const CurrentWeatherView = () => {
   }, []);
 
   return (
-    <>
-      {weathers.length > 0 ? (
-        <>
-          <WeatherComponent weather={weathers[0]} isInImperials />
-          <WeatherComponent weather={weathers[0]} />
-        </>
-      ) : (
-        "Loading..."
-      )}
-    </>
+    <div className="w-screen">
+      <div className="w-fit mx-auto">
+        <Link to="/Gliwice">
+          <LinkButton text="Gliwice" />
+        </Link>
+        <Link to="/Hamburg">
+          <LinkButton text="Hamburg" />
+        </Link>
+      </div>
+      <div className="clear-both"></div>
+      <div>
+        {weathers.length > 0 ? (
+          <>
+            <WeatherComponent
+              weather={
+                window.location.href.endsWith("Gliwice")
+                  ? weathers[0]
+                  : weathers[1]
+              }
+            />
+          </>
+        ) : (
+          "Loading..."
+        )}
+      </div>
+    </div>
   );
 };
