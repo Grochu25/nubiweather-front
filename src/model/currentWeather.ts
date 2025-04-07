@@ -1,3 +1,5 @@
+import { Condition } from "./condition";
+
 export interface CurrentWeather {
   dataCollectTime: Date;
   city: string;
@@ -19,9 +21,4 @@ export interface CurrentWeather {
   vis_km: number;
   vis_miles: number;
   uv: number;
-}
-
-interface Condition {
-  text: string;
-  icon: string;
 }

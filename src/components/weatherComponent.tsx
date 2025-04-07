@@ -8,9 +8,13 @@ export const WeatherComponent = (props: {
   console.log(props.isInImperials);
   return (
     <>
-      <h1>
-        {weather.city} - {weather.country}
-      </h1>
+      <h1>{weather.city}</h1>
+      <h3>{weather.country}</h3>
+      <img src={weather.condition.icon} width="300px" />
+      <h2>{weather.condition.text}</h2>
+      <span>
+        last update: {weather.dataCollectTime.toLocaleString("en-GB")}
+      </span>
       <div>
         Temperatura:{" "}
         {props.isInImperials ? weather.temp_f + "°F" : weather.temp_c + "°C"}
@@ -45,8 +49,6 @@ export const WeatherComponent = (props: {
           ? weather.vis_miles + " mil"
           : weather.vis_km + " km"}
       </div>
-      <img src={weather.condition.icon} width="300px" />
-      <h2>{weather.condition.text}</h2>
     </>
   );
 };
