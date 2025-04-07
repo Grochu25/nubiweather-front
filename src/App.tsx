@@ -1,9 +1,13 @@
 //import nubisoftLogo from "assets/nubisoft.svg";
-import { CurrentWeatherView } from "./views/currentWeatherView.tsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { CurrentWeatherView } from "./views/weatherView.tsx";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 
 const router = createBrowserRouter([
-  { path: "/", element: <CurrentWeatherView /> },
+  { path: "/", element: <Navigate to="/Gliwice" replace /> },
   { path: "/Gliwice", element: <CurrentWeatherView /> },
   { path: "/Hamburg", element: <CurrentWeatherView /> },
 ]);

@@ -7,8 +7,8 @@ export interface ForecastWeather {
   forecast: Forecast[];
 }
 
-interface Forecast {
-  date: Date;
+export interface Forecast {
+  date: string;
   day: DayForecast;
   hours: HourForecast[];
 }

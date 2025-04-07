@@ -18,7 +18,7 @@ export const WindBox = (props: {
       </p>
       <div className="my-2 mx-4 text-center">
         <img src={props.dirIcon} className="w-6 inline" />
-        <p className="inline p-2">{props.windDir}</p>
+        <p className="inline text-sm p-2">{props.windDir}</p>
       </div>
     </div>
   );

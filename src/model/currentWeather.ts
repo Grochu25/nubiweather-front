@@ -1,7 +1,7 @@
 import { Condition } from "./condition";
 
 export interface CurrentWeather {
-  dataCollectTime: Date;
+  dataCollectTime: string;
   city: string;
   country: string;
   temp_c: number;

@@ -15,7 +15,6 @@ export const WeatherComponent = (props: {
   isInImperials?: boolean;
 }) => {
   const weather = props.weather;
-  console.log(props.isInImperials);
   return (
     <div className="w-72 sm:w-fit mx-auto">
       <div className=" h-10 float-right">
@@ -28,7 +27,11 @@ export const WeatherComponent = (props: {
         {weather.city}
       </h1>
       <h3 className="text-sm sm:text-base mx-4">
-        {weather.country} - {weather.dataCollectTime.toLocaleString("en-GB")}
+        {weather.country} -{" "}
+        {new Date(weather.dataCollectTime).toLocaleString("en-GB", {
+          dateStyle: "short",
+          timeStyle: "short",
+        })}
       </h3>
       <h2 className="text-center text-4xl font-bold mt-3">
         {weather.condition.text}
@@ -50,7 +53,7 @@ export const WeatherComponent = (props: {
           dirIcon={windDirIcon}
           title={"wind"}
           metric={weather.wind_kph + " km/h"}
-          imperial={weather.wind_mph + " mil/h"}
+          imperial={weather.wind_mph + " mph"}
           windDir={weather.wind_dir}
           isInImperials={props.isInImperials}
         />
@@ -96,7 +99,7 @@ export const WeatherComponent = (props: {
             icon={visibilityIcon}
             title={"visibility"}
             metric={weather.vis_km + " km"}
-            imperial={weather.vis_miles + " mil"}
+            imperial={weather.vis_miles + " miles"}
             isInImperials={props.isInImperials}
             iconSize={11}
             isTopBlock
