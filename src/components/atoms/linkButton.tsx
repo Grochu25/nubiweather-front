@@ -3,8 +3,7 @@ export const LinkButton = (props: { text: string }) => {
   return (
     <div
       className={
-        "float-left w-fit mx-2 " +
-        (active ? "border-b-2 border-solid border-white" : "")
+        "float-left w-fit mx-2 " + (active ? "border-b-2 border-solid border-white" : "")
       }
     >
       {props.text}

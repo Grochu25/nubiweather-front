@@ -7,10 +7,7 @@ export const ForecastFullComponent = (props: {
 }) => (
   <>
     {props.forecastWeather.forecast.map((forecast: Forecast) => (
-      <ForecastDayComponent
-        forecast={forecast}
-        isInImperials={props.isInImperials}
-      />
+      <ForecastDayComponent forecast={forecast} isInImperials={props.isInImperials} />
     ))}
   </>
 );

@@ -4,23 +4,17 @@ export const SmallIconBox = (props: {
   isInImperials?: boolean;
   metric: number | string;
   imperial?: number | string;
-  iconSize?: number;
   iconXMargin?: number;
   iconYMargin?: number;
   additionalIconStyle?: string;
   additionalTextStyle?: string;
   isTopBlock?: boolean;
 }) => {
-  const iconSize = props.iconSize ? props.iconSize : 10;
   const iconXMargin = props.iconXMargin ? props.iconXMargin : 2;
   const iconYMargin = props.iconYMargin ? props.iconYMargin : 2;
   const topMargin = props.isTopBlock ? 0 : 4;
-  const additionalIconStyle = props.additionalIconStyle
-    ? props.additionalIconStyle
-    : "";
-  const additionalTextStyle = props.additionalTextStyle
-    ? props.additionalTextStyle
-    : "";
+  const additionalIconStyle = props.additionalIconStyle ? props.additionalIconStyle : "";
+  const additionalTextStyle = props.additionalTextStyle ? props.additionalTextStyle : "";
   return (
     <div
       title={props.title}
@@ -34,9 +28,7 @@ export const SmallIconBox = (props: {
       <img
         src={props.icon}
         className={
-          "w-" +
-          iconSize +
-          " mx-" +
+          "w-10 mx-" +
           iconXMargin +
           " my-" +
           iconYMargin +

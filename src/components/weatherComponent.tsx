@@ -23,9 +23,7 @@ export const WeatherComponent = (props: {
           className="w-20 sm:w-auto relative"
         />
       </div>
-      <h1 className="text-3xl sm:text-5xl font-bold mx-3 mb-2">
-        {weather.city}
-      </h1>
+      <h1 className="text-3xl sm:text-5xl font-bold mx-3 mb-2">{weather.city}</h1>
       <h3 className="text-sm sm:text-base mx-4">
         {weather.country} -{" "}
         {new Date(weather.dataCollectTime).toLocaleString("en-GB", {
@@ -33,9 +31,7 @@ export const WeatherComponent = (props: {
           timeStyle: "short",
         })}
       </h3>
-      <h2 className="text-center text-4xl font-bold mt-3">
-        {weather.condition.text}
-      </h2>
+      <h2 className="text-center text-4xl font-bold mt-3">{weather.condition.text}</h2>
       <div className="text-center">
         <p className="text-8xl font-bold">
           {props.isInImperials ? weather.temp_f + "°F" : weather.temp_c + "°C"}
@@ -44,9 +40,7 @@ export const WeatherComponent = (props: {
       <div className="mx-4 w-auto">
         <p className="mb-3 text-center">
           Feels like:{" "}
-          {props.isInImperials
-            ? weather.feelslike_f + "°F"
-            : weather.feelslike_c + "°C"}
+          {props.isInImperials ? weather.feelslike_f + "°F" : weather.feelslike_c + "°C"}
         </p>
         <WindBox
           windIcon={windIcon}
@@ -73,8 +67,8 @@ export const WeatherComponent = (props: {
             metric={weather.pressure_mb + " hPa"}
             imperial={weather.pressure_in + " inHg"}
             isInImperials={props.isInImperials}
-            iconSize={9}
             iconXMargin={1}
+            additionalIconStyle="w-9"
             additionalTextStyle="text-sm"
           />
         </div>
@@ -83,14 +77,13 @@ export const WeatherComponent = (props: {
             icon={cloudIcon}
             title={"clouds"}
             metric={weather.cloud + "%"}
-            iconSize={12}
+            iconYMargin={3}
             isTopBlock
           />
           <SmallIconBox
             icon={humidityIcon}
             title={"humidity"}
             metric={weather.humidity + "%"}
-            iconSize={9}
             additionalIconStyle="mr-5"
           />
         </div>
@@ -101,14 +94,12 @@ export const WeatherComponent = (props: {
             metric={weather.vis_km + " km"}
             imperial={weather.vis_miles + " miles"}
             isInImperials={props.isInImperials}
-            iconSize={11}
             isTopBlock
           />
           <SmallIconBox
             icon={uvIcon}
             title={"uv_index"}
             metric={weather.uv}
-            iconSize={9}
             additionalIconStyle="mr-5"
           />
         </div>

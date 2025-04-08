@@ -34,20 +34,14 @@ export const ForecastDayComponent = (props: {
       <div className="w-fit mx-auto">
         <div>
           <img src={tempIcon} className="w-10 mx-2 my-2 float-left " />
-          <p
-            title="min temperature"
-            className="my-1 mx-3 w-12 text-center float-left "
-          >
+          <p title="min temperature" className="my-1 mx-3 w-12 text-center float-left ">
             min:
             <br />
             {props.isInImperials
               ? forecastDay.mintemp_f + "°F"
               : forecastDay.mintemp_c + "°C"}
           </p>
-          <p
-            title="max temperature"
-            className="my-1 mx-4 text-center float-left "
-          >
+          <p title="max temperature" className="my-1 mx-4 text-center float-left ">
             max:
             <br />
             {props.isInImperials
@@ -58,35 +52,21 @@ export const ForecastDayComponent = (props: {
         <div className="clear-both"></div>
         <div className="h-14">
           <img src={rainIcon} className="w-10 mx-2 my-2 float-left " />
-          <p
-            title="rain chance"
-            className={"my-4 mx-3 w-12 text-center float-left "}
-          >
+          <p title="rain chance" className={"my-4 mx-3 w-12 text-center float-left "}>
             {forecastDay.daily_chance_of_rain + "%"}
           </p>
-          <p
-            title="total precipitation"
-            className={"my-4 mx-4 text-center float-left "}
-          >
+          <p title="total precipitation" className={"my-4 mx-4 text-center float-left "}>
             {props.isInImperials
               ? forecastDay.totalprecip_in + " in"
               : forecastDay.totalprecip_mm + " mm"}
           </p>
         </div>
-        <div
-          className={"h-14 " + forecastDay.daily_will_it_snow ? " hidden" : ""}
-        >
+        <div className={"h-14 " + forecastDay.daily_will_it_snow ? " hidden" : ""}>
           <img src={snowIcon} className="w-10 mx-2 my-2 float-left " />
-          <p
-            title="snow chance"
-            className={"my-4 mx-3 w-12 text-center float-left "}
-          >
+          <p title="snow chance" className={"my-4 mx-3 w-12 text-center float-left "}>
             {forecastDay.daily_chance_of_snow + "%"}
           </p>
-          <p
-            title="total snow fall"
-            className={"my-4 mx-4 text-center float-left "}
-          >
+          <p title="total snow fall" className={"my-4 mx-4 text-center float-left "}>
             {forecastDay.totalsnow_cm + " cm"}
           </p>
         </div>
@@ -103,9 +83,7 @@ export const ForecastDayComponent = (props: {
           <div className="float-left w-fit" title="avrage visibility">
             <img src={visibilityIcon} className="w-10 mx-2 my-2 float-left " />
             <p className={"my-4 text-center float-left "}>
-              {props.isInImperials
-                ? forecastDay.avgvis_miles
-                : forecastDay.avgvis_km}
+              {props.isInImperials ? forecastDay.avgvis_miles : forecastDay.avgvis_km}
             </p>
           </div>
         </div>

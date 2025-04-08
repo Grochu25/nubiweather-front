@@ -9,26 +9,24 @@ import { ForecastFullComponent } from "../components/forecastFullComponent";
 import { getForecastedWeathersInCity } from "../repositories/forecastWeatherRepository";
 
 export const CurrentWeatherView = () => {
-  const [weather, setWeather] = useState<CurrentWeather>();
-  const [forecast, setForecast] = useState<ForecastWeather>();
+  const [weather, setWeather] = useState<CurrentWeather | undefined | null>(undefined);
+  const [forecast, setForecast] = useState<ForecastWeather | undefined | null>();
   const [imperialUnits, setImperial] = useState<boolean>(false);
 
-  const location = useLocation();
-  const city = location.pathname.substring(1);
+  const city = useLocation().pathname.substring(1);
 
   const imperialUnitsChange = () => {
     setImperial(!imperialUnits);
-    console.log(imperialUnits);
   };
 
   useEffect(() => {
     (async () => {
       const apiWeather = await getCurrentWeathersInCity(city);
-      if (apiWeather != null) setWeather(apiWeather);
+      setWeather(apiWeather);
     })();
     (async () => {
       const apiForecast = await getForecastedWeathersInCity(city);
-      if (apiForecast != null) setForecast(apiForecast);
+      setForecast(apiForecast);
     })();
   }, [city]);
 
@@ -47,7 +45,9 @@ export const CurrentWeatherView = () => {
         {weather ? (
           <WeatherComponent weather={weather} isInImperials={imperialUnits} />
         ) : (
-          <div className="mx-auto w-fit text-6xl">Loading...</div>
+          <div className="mx-auto w-fit text-6xl">
+            {weather === null ? "Weather not avaliable" : "Loading..."}
+          </div>
         )}
       </div>
       <div className="w-96 mx-auto my-2 text-right">
@@ -70,7 +70,9 @@ export const CurrentWeatherView = () => {
             isInImperials={imperialUnits}
           />
         ) : (
-          <div className="mx-auto w-fit text-5xl">No forecast</div>
+          <div className="mx-auto w-fit text-5xl">
+            {weather === null ? "No forecast" : "Loading..."}
+          </div>
         )}
       </div>
     </div>

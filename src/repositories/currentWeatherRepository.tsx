@@ -8,7 +8,7 @@ export const getCurrentWeathersInBoth = async (): Promise<CurrentWeather[]> => {
     })
     .then((response) => response.data)
     .catch(async (error) => {
-      console.log(error.response.status);
+      console.log(error.response);
     });
 
   return result || [];
@@ -23,7 +23,7 @@ export const getCurrentWeathersInCity = async (
     })
     .then((response) => response.data)
     .catch(async (error) => {
-      console.log(error.response.status);
+      console.log(error.response);
     });
 
   return result || null;
