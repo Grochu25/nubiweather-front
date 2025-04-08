@@ -8,7 +8,7 @@ import { ForecastWeather } from "../model/forecastWeather";
 import { ForecastFullComponent } from "../components/forecastFullComponent";
 import { getForecastedWeathersInCity } from "../repositories/forecastWeatherRepository";
 
-export const CurrentWeatherView = () => {
+export const WeatherView = () => {
   const [weather, setWeather] = useState<CurrentWeather | undefined | null>(undefined);
   const [forecast, setForecast] = useState<ForecastWeather | undefined | null>();
   const [imperialUnits, setImperial] = useState<boolean>(false);
