@@ -31,7 +31,7 @@ export const WeatherView = () => {
   }, [city]);
 
   return (
-    <div className="w-screen my-8">
+    <div className="w-full my-8 mx-0">
       <div className="w-fit mx-auto">
         <Link to="/Gliwice">
           <LinkButton text="Gliwice" />
