@@ -50,7 +50,7 @@ export const WeatherView = () => {
           </div>
         )}
       </div>
-      <div className="w-96 mx-auto my-2 text-right">
+      <div className="w-60 sm:w-96 mx-auto my-2 text-right">
         <label htmlFor="imperial">Imperial units </label>
         <input
           name="imperial"
