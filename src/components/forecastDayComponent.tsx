@@ -26,7 +26,7 @@ export const ForecastDayComponent = (props: {
           src={forecastDay.condition.icon}
           className="mx-auto sm:float-left w-20 sm:w-auto relative"
         />
-        <h2 className="float-left w-56 text-2xl font-bold mt-3">
+        <h2 className="float-left w-56 text-2xl font-bold mt-3 text-center">
           {forecastDay.condition.text}
         </h2>
       </div>
