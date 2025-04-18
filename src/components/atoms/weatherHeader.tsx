@@ -13,10 +13,7 @@ export const WeatherHeader = (props: {
   return (
     <div>
       <div className=" h-10 float-right">
-        <img
-          src={props.icon.replace("64x64", "128x128")}
-          className="w-20 sm:w-auto relative"
-        />
+        <img src={props.icon.replace("64x64", "128x128")} className="w-20 sm:w-auto" />
       </div>
       <h1 className="text-3xl sm:text-5xl font-bold mx-3 mb-2">{props.city}</h1>
       <h3 className="text-sm sm:text-base mx-4">
