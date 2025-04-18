@@ -1,5 +1,5 @@
 # NubiWeather Frontend
-Project created to apply for internship in nubisoft company. The application uses [nubiweather-backend](https://github.com/Grochu25/nubiweather-back) (which utilize [weatherapi.com](https://www.weatherapi.com/)) to get current weather and weather forecast for 7 days in Gliwice and Hamburg.
+Project created to apply for internship in nubisoft company. The application uses [nubiweather-backend](https://github.com/Grochu25/nubiweather-back) (which utilize [weatherapi.com](https://www.weatherapi.com/)) to get current weather and weather forecast for next days in Gliwice and Hamburg.
 ## Project requirements
 To run the project requires npm and and vite installed in the project directory. 
 
