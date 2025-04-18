@@ -13,7 +13,7 @@ export interface Forecast {
   hours: HourForecast[];
 }
 
-interface DayForecast {
+export interface DayForecast {
   maxtemp_c: number;
   maxtemp_f: number;
   mintemp_c: number;

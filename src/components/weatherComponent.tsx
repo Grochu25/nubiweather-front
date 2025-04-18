@@ -9,6 +9,7 @@ import visibilityIcon from "../assets/visibilityIcon.svg";
 import uvIcon from "../assets/uvIcon.svg";
 import { SmallIconBox } from "./atoms/smallIconBox";
 import { WindBox } from "./atoms/windBox";
+import { WeatherHeader } from "./atoms/weatherHeader";
 
 export const WeatherComponent = (props: {
   weather: CurrentWeather;
@@ -17,31 +18,19 @@ export const WeatherComponent = (props: {
   const weather = props.weather;
   return (
     <div className="w-72 sm:w-fit mx-auto">
-      <div className=" h-10 float-right">
-        <img
-          src={weather.condition.icon.replace("64x64", "128x128")}
-          className="w-20 sm:w-auto relative"
-        />
-      </div>
-      <h1 className="text-3xl sm:text-5xl font-bold mx-3 mb-2">{weather.city}</h1>
-      <h3 className="text-sm sm:text-base mx-4">
-        {weather.country} -{" "}
-        {new Date(weather.dataCollectTime).toLocaleString("en-GB", {
-          dateStyle: "short",
-          timeStyle: "short",
-        })}
-      </h3>
-      <h2 className="text-center text-4xl font-bold mt-3">{weather.condition.text}</h2>
-      <div className="text-center">
-        <p className="text-8xl font-bold">
-          {props.isInImperials ? weather.temp_f + "°F" : weather.temp_c + "°C"}
-        </p>
-      </div>
+      <WeatherHeader
+        icon={weather.condition.icon}
+        city={weather.city}
+        country={weather.country}
+        dataCollectTime={weather.dataCollectTime}
+        condition={weather.condition.text}
+        tempMetric={weather.temp_c + "°C"}
+        tempImperial={weather.temp_f + "°F"}
+        feelsLikeMetric={weather.feelslike_c + "°C"}
+        feelsLikeImperial={weather.feelslike_f + "°F"}
+        isInImperials={props.isInImperials}
+      />
       <div className="mx-4 w-auto">
-        <p className="mb-3 text-center">
-          Feels like:{" "}
-          {props.isInImperials ? weather.feelslike_f + "°F" : weather.feelslike_c + "°C"}
-        </p>
         <WindBox
           windIcon={windIcon}
           dirIcon={windDirIcon}
