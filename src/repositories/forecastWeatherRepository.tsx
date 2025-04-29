@@ -1,11 +1,11 @@
 import axios from "axios";
 import { ForecastWeather } from "../model/forecastWeather";
 
-const hostname = "http://localhost:8080";
-
-export const getForecastedWeathersInBoth = async (): Promise<ForecastWeather[]> => {
+export const getForecastedWeathersInBoth = async (): Promise<
+  ForecastWeather[]
+> => {
   const result = await axios
-    .get<ForecastWeather[]>(hostname + "/forecast-weather", {
+    .get<ForecastWeather[]>("/api/forecast-weather", {
       timeout: 3000,
     })
     .then((response) => response.data)
@@ -20,7 +20,7 @@ export const getForecastedWeathersInCity = async (
   city: string
 ): Promise<ForecastWeather | null> => {
   const result = await axios
-    .get<ForecastWeather>(hostname + "/forecast-weather/" + city, {
+    .get<ForecastWeather>("/api/forecast-weather/" + city, {
       timeout: 3000,
     })
     .then((response) => response.data)

@@ -6,8 +6,12 @@ export const ForecastFullComponent = (props: {
   isInImperials?: boolean;
 }) => (
   <>
-    {props.forecastWeather.forecast.map((forecast: Forecast) => (
-      <ForecastDayComponent forecast={forecast} isInImperials={props.isInImperials} />
+    {props.forecastWeather.forecast.map((forecast: Forecast, index: number) => (
+      <ForecastDayComponent
+        forecast={forecast}
+        isInImperials={props.isInImperials}
+        key={"forecastDay" + index}
+      />
     ))}
   </>
 );
